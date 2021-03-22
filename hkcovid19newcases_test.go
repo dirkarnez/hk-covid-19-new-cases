@@ -8,11 +8,10 @@ import (
 func TestShouldGet(t *testing.T) {
 	fmt.Println("TestShouldGet")
 
-	count, error := Get()
-
-	fmt.Printf("count: %d\n", count)
-
-	if error != nil {
+	count, err := Get()
+	if err != nil {
 		t.Errorf("Should not return error")
 	}
+
+	fmt.Printf("count: %d\n", count)
 }
