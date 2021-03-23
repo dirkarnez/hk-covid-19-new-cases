@@ -1,11 +1,11 @@
-package hkcovid19newcases
+package hkcovid19
 
 import (
 	"github.com/antchfx/jsonquery"
 	"strconv"
 )
 
-func Get() (uint64, error)  {
+func GetNewCases() (uint64, error)  {
 	doc, err := jsonquery.LoadURL("https://chp-dashboard.geodata.gov.hk/covid-19/data/keynum.json")
 	if err != nil {
 		return 0, err
