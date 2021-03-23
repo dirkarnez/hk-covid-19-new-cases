@@ -1,4 +1,4 @@
-module github.com/dirkarnez/hk-covid-19-new-cases
+module github.com/dirkarnez/hkcovid19
 
 go 1.15
 
