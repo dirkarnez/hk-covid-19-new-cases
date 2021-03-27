@@ -34,3 +34,18 @@ func GetNewCases() (uint64, error)  {
 
 	return confirmed - pastConfirmed, nil;
 }
+
+
+func GetCommunityTestingCentres() ([]string, error) {
+	doc, err := jsonquery.LoadURL("https://www.communitytest.gov.hk/_data/status/en.json")
+	if err != nil {
+		return []string{}, err
+	}
+
+	var centresName []string
+	for _, n := range jsonquery.Find(doc, "centres/*/name") {
+		centresName = append(centresName, n.InnerText())
+	}
+
+	return centresName, nil
+}
